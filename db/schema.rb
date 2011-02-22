@@ -10,10 +10,31 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110113221507) do
+ActiveRecord::Schema.define(:version => 20110220234514) do
 
   create_table "graduations", :force => true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "matters", :force => true do |t|
+    t.string   "name"
+    t.integer  "hours"
+    t.integer  "graduation_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "matters_students", :id => false, :force => true do |t|
+    t.integer "matter_id"
+    t.integer "student_id"
+  end
+
+  create_table "students", :force => true do |t|
+    t.string   "name"
+    t.integer  "age"
+    t.integer  "graduation_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

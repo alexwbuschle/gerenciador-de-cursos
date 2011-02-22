@@ -1,0 +1,27 @@
+<h1>Listing matters</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Hours</th>
+    <th>Graduation</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @matters.each do |matter| %>
+  <tr>
+    <td><%= matter.name %></td>
+    <td><%= matter.hours %></td>
+    <td><%= matter.graduation.name %></td>
+    <td><%= link_to 'Show', matter %></td>
+    <td><%= link_to 'Edit', edit_matter_path(matter) %></td>
+    <td><%= link_to 'Destroy', matter, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Matter', new_matter_path %>

@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @matter.name %>
+</p>
+
+<p>
+  <b>Hours:</b>
+  <%= @matter.hours %>
+</p>
+
+<p>
+  <b>Graduation:</b>
+  <%= @matter.graduation.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_matter_path(@matter) %> |
+<%= link_to 'Back', matters_path %>

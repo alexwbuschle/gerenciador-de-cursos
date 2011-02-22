@@ -1,4 +1,8 @@
 College::Application.routes.draw do
+  resources :students
+
+  resources :matters
+
   resources :graduations
 
   # The priority is based upon order of creation:
